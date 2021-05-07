@@ -1,0 +1,58 @@
+{% extends "master.html" %} {% block content %}
+<!--Conatct-->
+<section id="speakers" class="section speakers">
+    <div class="container ">
+        <div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile2 " data-aos="flip-left ">
+            <div class="contact-agileits ">
+                <h4>Contact Us</h4>
+
+                <form method="POST" name="sentMessage " id="contactForm " action="{% url 'contact_Us' %}">
+                    {% csrf_token %}
+
+                    <div class="control-group form-group ">
+
+                        <label class="contact-p1 ">Full Name:</label>
+                        <input type="text " class="form-control " name="fullname" id="name " required>
+                        <p class="help-block "></p>
+
+                    </div>
+                    <div class="control-group form-group ">
+
+                        <label class="contact-p1 ">Phone Number:</label>
+                        <input type="tel " class="form-control " name="phoneNumber" id="phone " required>
+                        <p class="help-block "></p>
+
+                    </div>
+                    <div class="control-group form-group ">
+
+                        <label class="contact-p1 ">Email Address:</label>
+                        <input type="email " class="form-control " name="email" id="email " required>
+                        <p class="help-block "></p>
+
+                    </div>
+                    <div class="control-group form-group ">
+
+                        <label class="contact-p1 ">Message:</label>
+
+                        <textarea id="subject " name="message" placeholder="Write something.." style="height:200px "></textarea>
+
+                    </div>
+
+
+                    <div class="text-center mt20 ">
+                        <button name="contact" type="submit" class="btn btn-black" id="message-submit-btn ">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom ">
+        <p style="font-size: 14px; ">Plot 67-173, Mukono Hill, <br /> Bishop Tucker Road, <br /> P.O. Box 4, Mukono, Uganda</p>
+        <p style="font-size: 14px; ">Telephone:+256 312 350 800 /880<br /> Fax: +256 414 290 800 <br />Email Us: <a href="mailto:info@ucu.ac.ug ">info@ucu.ac.ug <br /></p>
+    </div>
+    
+   
+
+</section>
+{% endblock content %}
