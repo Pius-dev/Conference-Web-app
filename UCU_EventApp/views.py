@@ -23,7 +23,7 @@ def register(request):
                 topic_to_Present = request.POST["topictopresent"]
                 )
         member.save()
-        messages.success(request,"Thank You for taking time to Register for the Conference")
+       
         return redirect('/') 
     return render(request,'UCU_EventApp/register.html')
 
