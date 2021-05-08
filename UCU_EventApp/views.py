@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from . models import Member,Contact
 from django import forms
+from django.contrib import messages
 
 
 
@@ -17,10 +18,13 @@ def register(request):
                 email = request.POST['email'],
                 gender = request.POST['gender'],
                 phoneNumber = request.POST['phoneNumber'],
-                address = request.POST['address']
+                address = request.POST['address'],
+                participant = request.POST["participant"],
+                topic_to_Present = request.POST["topictopresent"]
                 )
         member.save()
-        return redirect('/')
+        messages.success(request,"Thank You for taking time to Register for the Conference")
+        return redirect('/') 
     return render(request,'UCU_EventApp/register.html')
 
 def  partner(request):
@@ -43,6 +47,7 @@ def  contact(request):
                 message = request.POST['message']
                 )
         cont.save()
-        return redirect('/')
+        return render(request, "UCU_EventApp/contact.html")
+        
     return render(request, 'UCU_EventApp/contact.html')
 
